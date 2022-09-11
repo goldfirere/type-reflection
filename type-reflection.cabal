@@ -1,0 +1,47 @@
+cabal-version:      2.4
+name:               type-reflection
+version:            0.1
+synopsis:
+
+-- description:
+homepage:
+
+-- bug-reports:
+license:            MIT
+license-file:       LICENSE
+author:             Richard Eisenberg
+maintainer:         rae@richarde.dev
+
+-- copyright:
+-- category:
+extra-source-files: CHANGELOG.md
+
+library
+    exposed-modules: Type.Reflection.Name
+                     Type.Reflection.List
+
+    other-modules:
+    -- other-extensions:
+    build-depends:    base >= 4.16 && < 5,
+                      parameterized-utils >= 2.0,
+                      hashable >= 1.3,
+                      text >= 1.2,
+    hs-source-dirs:   src
+    default-language: GHC2021
+
+    default-extensions:
+
+test-suite test
+    default-language: GHC2021
+    ghc-options: -Wno-missing-home-modules
+
+    type:             exitcode-stdio-1.0
+    hs-source-dirs:   test
+
+    main-is:          Test.hs
+    other-modules:
+
+    build-depends:    base >= 4.16 && < 5,
+                      type-reflection,
+                      tasty >= 1.4.2,
+                      tasty-hunit >= 0.10,

@@ -1,0 +1,4 @@
+packages: type-reflection.cabal
+
+package type-reflection
+  ghc-options: -Wall -Wno-unticked-promoted-constructors
