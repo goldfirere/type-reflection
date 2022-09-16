@@ -1,5 +1,5 @@
 # Revision history for type-reflection
 
-## 0.1
+## 1.0
 
 * Initial release.

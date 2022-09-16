@@ -16,8 +16,7 @@ module Type.Reflection.List (
   ) where
 
 import Type.Reflection
-
-import qualified Data.Parameterized.List as P
+import Data.SOP.NP
 
 -- | Given a representation of a list, get a representation of the kind of the list's
 -- elements.
@@ -27,14 +26,14 @@ typeRepListKind tr
   = tr_k
 
 -- | Turn a representation of a list into a list of representations.
-typeRepList :: forall {k} (xs :: [k]). TypeRep xs -> P.List TypeRep xs
+typeRepList :: forall {k} (xs :: [k]). TypeRep xs -> NP TypeRep xs
 typeRepList tr_list
   | App (App cons tr) trs <- tr_list
   , Just HRefl <- eqTypeRep cons (withTypeable tr_k $ typeRep @((:) @k))
-  = tr P.:< typeRepList trs
+  = tr :* typeRepList trs
 
   | Just HRefl <- eqTypeRep tr_list (withTypeable tr_k $ typeRep @('[] @k))
-  = P.Nil
+  = Nil
 
   | otherwise
   = error "list is neither (:) nor []."
