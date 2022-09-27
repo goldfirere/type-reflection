@@ -17,7 +17,7 @@ license-file:       LICENSE
 author:             Richard Eisenberg
 maintainer:         rae@richarde.dev
 
--- copyright:
+copyright: Richard Eisenberg
 -- category:
 extra-source-files: CHANGELOG.md
 
