@@ -1,7 +1,7 @@
 cabal-version:      2.4
 name:               type-reflection
 version:            1.0
-synopsis:
+synopsis: Support functions to work with type representations.
 
 description:
     Support functions to work with type representations, as exported
@@ -9,7 +9,7 @@ description:
     to translate 'TypeRep's into strings, with customizability around
     whether the rendered strings are fully qualified.
 
-homepage:
+homepage: https://github.com/goldfirere/type-reflection
 
 bug-reports:        https://github.com/goldfirere/type-reflection/issues
 license:            MIT
